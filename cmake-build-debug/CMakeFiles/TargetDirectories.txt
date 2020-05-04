@@ -1,0 +1,11 @@
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/p1.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/IOI94p1.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/Competitive_Programming.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/p2.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/IOI14p2.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/Grid1.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/main.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/p0.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/p6.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/rebuild_cache.dir

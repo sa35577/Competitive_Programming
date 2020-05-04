@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/satcl/CLionProjects/Competitive Programming/DMOJ/Grid1.cpp
+bits/stdc++.h
+-
+unordered_set
+-
+stdio.h
+-
+

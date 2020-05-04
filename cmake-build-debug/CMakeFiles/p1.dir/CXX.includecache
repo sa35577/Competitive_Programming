@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/satcl/CLionProjects/Competitive Programming/DMOPC/19/April/p1.cpp
+bits/stdc++.h
+-
+unordered_set
+-
+stdio.h
+-
+

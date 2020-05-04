@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.16)
+project(Competitive_Programming)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(Competitive_Programming main.cpp IOI/IOI14p2.cpp IOI/IOI94p1.cpp template.cpp DMOPC/19/April/p0.cpp DMOPC/19/April/p1.cpp DMOPC/19/April/p2.cpp "DMOPC/14/Exam Time/p6.cpp")
+add_executable(IOI14p2 IOI/IOI14p2.cpp)
+add_executable(main main.cpp)
+add_executable(IOI94p1 IOI/IOI94p1.cpp)
+add_executable(p0 DMOPC/19/April/p0.cpp)
+add_executable(p2 DMOPC/19/April/p2.cpp)
+add_executable(p1 DMOPC/19/April/p1.cpp)
+add_executable(Grid1 DMOJ/Grid1.cpp)
+add_executable(p6 "DMOPC/14/Exam Time/p6.cpp")
