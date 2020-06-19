@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/satcl/CLionProjects/Competitive Programming/AtCoder/DP/D.cpp" "C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.obj"
   "C:/Users/satcl/CLionProjects/Competitive Programming/AtCoder/DP/E.cpp" "C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/Competitive_Programming.dir/AtCoder/DP/E.cpp.obj"
+  "C:/Users/satcl/CLionProjects/Competitive Programming/DMOJ/ACoinProblem.cpp" "C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.obj"
   "C:/Users/satcl/CLionProjects/Competitive Programming/DMOPC/14/Exam Time/p6.cpp" "C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/Competitive_Programming.dir/DMOPC/14/Exam_Time/p6.cpp.obj"
   "C:/Users/satcl/CLionProjects/Competitive Programming/DMOPC/19/April/p0.cpp" "C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/Competitive_Programming.dir/DMOPC/19/April/p0.cpp.obj"
   "C:/Users/satcl/CLionProjects/Competitive Programming/DMOPC/19/April/p1.cpp" "C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/Competitive_Programming.dir/DMOPC/19/April/p1.cpp.obj"

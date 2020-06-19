@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.obj"
   "CMakeFiles/Competitive_Programming.dir/AtCoder/DP/E.cpp.obj"
+  "CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.obj"
   "CMakeFiles/Competitive_Programming.dir/DMOPC/14/Exam_Time/p6.cpp.obj"
   "CMakeFiles/Competitive_Programming.dir/DMOPC/19/April/p0.cpp.obj"
   "CMakeFiles/Competitive_Programming.dir/DMOPC/19/April/p1.cpp.obj"

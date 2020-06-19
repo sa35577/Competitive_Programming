@@ -38,10 +38,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = C:\Users\satcl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = C:\Users\satcl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = "C:\Users\satcl\CLionProjects\Competitive Programming\cmake-b
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	C:\Users\satcl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\Users\satcl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -239,6 +239,62 @@ p6/fast:
 	$(MAKE) -f CMakeFiles\p6.dir\build.make CMakeFiles/p6.dir/build
 .PHONY : p6/fast
 
+#=============================================================================
+# Target rules for targets named D
+
+# Build rule for target.
+D : cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 D
+.PHONY : D
+
+# fast build rule for target.
+D/fast:
+	$(MAKE) -f CMakeFiles\D.dir\build.make CMakeFiles/D.dir/build
+.PHONY : D/fast
+
+#=============================================================================
+# Target rules for targets named ACoinProblem
+
+# Build rule for target.
+ACoinProblem: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 ACoinProblem
+.PHONY : ACoinProblem
+
+# fast build rule for target.
+ACoinProblem/fast:
+	$(MAKE) -f CMakeFiles\ACoinProblem.dir\build.make CMakeFiles/ACoinProblem.dir/build
+.PHONY : ACoinProblem/fast
+
+AtCoder/DP/D.obj: AtCoder/DP/D.cpp.obj
+
+.PHONY : AtCoder/DP/D.obj
+
+# target to build an object file
+AtCoder/DP/D.cpp.obj:
+	$(MAKE) -f CMakeFiles\Competitive_Programming.dir\build.make CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.obj
+	$(MAKE) -f CMakeFiles\D.dir\build.make CMakeFiles/D.dir/AtCoder/DP/D.cpp.obj
+.PHONY : AtCoder/DP/D.cpp.obj
+
+AtCoder/DP/D.i: AtCoder/DP/D.cpp.i
+
+.PHONY : AtCoder/DP/D.i
+
+# target to preprocess a source file
+AtCoder/DP/D.cpp.i:
+	$(MAKE) -f CMakeFiles\Competitive_Programming.dir\build.make CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.i
+	$(MAKE) -f CMakeFiles\D.dir\build.make CMakeFiles/D.dir/AtCoder/DP/D.cpp.i
+.PHONY : AtCoder/DP/D.cpp.i
+
+AtCoder/DP/D.s: AtCoder/DP/D.cpp.s
+
+.PHONY : AtCoder/DP/D.s
+
+# target to generate assembly for a file
+AtCoder/DP/D.cpp.s:
+	$(MAKE) -f CMakeFiles\Competitive_Programming.dir\build.make CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.s
+	$(MAKE) -f CMakeFiles\D.dir\build.make CMakeFiles/D.dir/AtCoder/DP/D.cpp.s
+.PHONY : AtCoder/DP/D.cpp.s
+
 AtCoder/DP/E.obj: AtCoder/DP/E.cpp.obj
 
 .PHONY : AtCoder/DP/E.obj
@@ -268,6 +324,36 @@ AtCoder/DP/E.cpp.s:
 	$(MAKE) -f CMakeFiles\Competitive_Programming.dir\build.make CMakeFiles/Competitive_Programming.dir/AtCoder/DP/E.cpp.s
 	$(MAKE) -f CMakeFiles\E.dir\build.make CMakeFiles/E.dir/AtCoder/DP/E.cpp.s
 .PHONY : AtCoder/DP/E.cpp.s
+
+DMOJ/ACoinProblem.obj: DMOJ/ACoinProblem.cpp.obj
+
+.PHONY : DMOJ/ACoinProblem.obj
+
+# target to build an object file
+DMOJ/ACoinProblem.cpp.obj:
+	$(MAKE) -f CMakeFiles\Competitive_Programming.dir\build.make CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.obj
+	$(MAKE) -f CMakeFiles\ACoinProblem.dir\build.make CMakeFiles/ACoinProblem.dir/DMOJ/ACoinProblem.cpp.obj
+.PHONY : DMOJ/ACoinProblem.cpp.obj
+
+DMOJ/ACoinProblem.i: DMOJ/ACoinProblem.cpp.i
+
+.PHONY : DMOJ/ACoinProblem.i
+
+# target to preprocess a source file
+DMOJ/ACoinProblem.cpp.i:
+	$(MAKE) -f CMakeFiles\Competitive_Programming.dir\build.make CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.i
+	$(MAKE) -f CMakeFiles\ACoinProblem.dir\build.make CMakeFiles/ACoinProblem.dir/DMOJ/ACoinProblem.cpp.i
+.PHONY : DMOJ/ACoinProblem.cpp.i
+
+DMOJ/ACoinProblem.s: DMOJ/ACoinProblem.cpp.s
+
+.PHONY : DMOJ/ACoinProblem.s
+
+# target to generate assembly for a file
+DMOJ/ACoinProblem.cpp.s:
+	$(MAKE) -f CMakeFiles\Competitive_Programming.dir\build.make CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.s
+	$(MAKE) -f CMakeFiles\ACoinProblem.dir\build.make CMakeFiles/ACoinProblem.dir/DMOJ/ACoinProblem.cpp.s
+.PHONY : DMOJ/ACoinProblem.cpp.s
 
 DMOJ/Grid1.obj: DMOJ/Grid1.cpp.obj
 
@@ -550,10 +636,18 @@ help:
 	@echo ... main
 	@echo ... p0
 	@echo ... p6
+	@echo ... D
+	@echo ... ACoinProblem
 	@echo ... rebuild_cache
+	@echo ... AtCoder/DP/D.obj
+	@echo ... AtCoder/DP/D.i
+	@echo ... AtCoder/DP/D.s
 	@echo ... AtCoder/DP/E.obj
 	@echo ... AtCoder/DP/E.i
 	@echo ... AtCoder/DP/E.s
+	@echo ... DMOJ/ACoinProblem.obj
+	@echo ... DMOJ/ACoinProblem.i
+	@echo ... DMOJ/ACoinProblem.s
 	@echo ... DMOJ/Grid1.obj
 	@echo ... DMOJ/Grid1.i
 	@echo ... DMOJ/Grid1.s

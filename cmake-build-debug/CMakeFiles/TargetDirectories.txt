@@ -9,4 +9,6 @@ C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFile
 C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/main.dir
 C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/p0.dir
 C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/p6.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/D.dir
+C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/ACoinProblem.dir
 C:/Users/satcl/CLionProjects/Competitive Programming/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -34,10 +34,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = C:\Users\satcl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = C:\Users\satcl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -62,6 +62,8 @@ all: CMakeFiles/Grid1.dir/all
 all: CMakeFiles/main.dir/all
 all: CMakeFiles/p0.dir/all
 all: CMakeFiles/p6.dir/all
+all: CMakeFiles/D.dir/all
+all: CMakeFiles/ACoinProblem.dir/all
 
 .PHONY : all
 
@@ -81,6 +83,8 @@ clean: CMakeFiles/Grid1.dir/clean
 clean: CMakeFiles/main.dir/clean
 clean: CMakeFiles/p0.dir/clean
 clean: CMakeFiles/p6.dir/clean
+clean: CMakeFiles/D.dir/clean
+clean: CMakeFiles/ACoinProblem.dir/clean
 
 .PHONY : clean
 
@@ -91,7 +95,7 @@ clean: CMakeFiles/p6.dir/clean
 CMakeFiles/p1.dir/all:
 	$(MAKE) -f CMakeFiles\p1.dir\build.make CMakeFiles/p1.dir/depend
 	$(MAKE) -f CMakeFiles\p1.dir\build.make CMakeFiles/p1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=23,24 "Built target p1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=29,30 "Built target p1"
 .PHONY : CMakeFiles/p1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -118,7 +122,7 @@ CMakeFiles/p1.dir/clean:
 CMakeFiles/IOI94p1.dir/all:
 	$(MAKE) -f CMakeFiles\IOI94p1.dir\build.make CMakeFiles/IOI94p1.dir/depend
 	$(MAKE) -f CMakeFiles\IOI94p1.dir\build.make CMakeFiles/IOI94p1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=17,18 "Built target IOI94p1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=23,24 "Built target IOI94p1"
 .PHONY : CMakeFiles/IOI94p1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -145,12 +149,12 @@ CMakeFiles/IOI94p1.dir/clean:
 CMakeFiles/Competitive_Programming.dir/all:
 	$(MAKE) -f CMakeFiles\Competitive_Programming.dir\build.make CMakeFiles/Competitive_Programming.dir/depend
 	$(MAKE) -f CMakeFiles\Competitive_Programming.dir\build.make CMakeFiles/Competitive_Programming.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target Competitive_Programming"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=3,4,5,6,7,8,9,10,11,12,13,14 "Built target Competitive_Programming"
 .PHONY : CMakeFiles/Competitive_Programming.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Competitive_Programming.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" 10
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" 12
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Competitive_Programming.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/Competitive_Programming.dir/rule
@@ -172,7 +176,7 @@ CMakeFiles/Competitive_Programming.dir/clean:
 CMakeFiles/p2.dir/all:
 	$(MAKE) -f CMakeFiles\p2.dir\build.make CMakeFiles/p2.dir/depend
 	$(MAKE) -f CMakeFiles\p2.dir\build.make CMakeFiles/p2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=25,26 "Built target p2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=31,32 "Built target p2"
 .PHONY : CMakeFiles/p2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -199,7 +203,7 @@ CMakeFiles/p2.dir/clean:
 CMakeFiles/IOI14p2.dir/all:
 	$(MAKE) -f CMakeFiles\IOI14p2.dir\build.make CMakeFiles/IOI14p2.dir/depend
 	$(MAKE) -f CMakeFiles\IOI14p2.dir\build.make CMakeFiles/IOI14p2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=15,16 "Built target IOI14p2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=21,22 "Built target IOI14p2"
 .PHONY : CMakeFiles/IOI14p2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -226,7 +230,7 @@ CMakeFiles/IOI14p2.dir/clean:
 CMakeFiles/E.dir/all:
 	$(MAKE) -f CMakeFiles\E.dir\build.make CMakeFiles/E.dir/depend
 	$(MAKE) -f CMakeFiles\E.dir\build.make CMakeFiles/E.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=11,12 "Built target E"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=17,18 "Built target E"
 .PHONY : CMakeFiles/E.dir/all
 
 # Build rule for subdir invocation for target.
@@ -253,7 +257,7 @@ CMakeFiles/E.dir/clean:
 CMakeFiles/Grid1.dir/all:
 	$(MAKE) -f CMakeFiles\Grid1.dir\build.make CMakeFiles/Grid1.dir/depend
 	$(MAKE) -f CMakeFiles\Grid1.dir\build.make CMakeFiles/Grid1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=13,14 "Built target Grid1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=19,20 "Built target Grid1"
 .PHONY : CMakeFiles/Grid1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -280,7 +284,7 @@ CMakeFiles/Grid1.dir/clean:
 CMakeFiles/main.dir/all:
 	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=19,20 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=25,26 "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -307,7 +311,7 @@ CMakeFiles/main.dir/clean:
 CMakeFiles/p0.dir/all:
 	$(MAKE) -f CMakeFiles\p0.dir\build.make CMakeFiles/p0.dir/depend
 	$(MAKE) -f CMakeFiles\p0.dir\build.make CMakeFiles/p0.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=21,22 "Built target p0"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=27,28 "Built target p0"
 .PHONY : CMakeFiles/p0.dir/all
 
 # Build rule for subdir invocation for target.
@@ -334,7 +338,7 @@ CMakeFiles/p0.dir/clean:
 CMakeFiles/p6.dir/all:
 	$(MAKE) -f CMakeFiles\p6.dir\build.make CMakeFiles/p6.dir/depend
 	$(MAKE) -f CMakeFiles\p6.dir\build.make CMakeFiles/p6.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=27,28 "Built target p6"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=33,34 "Built target p6"
 .PHONY : CMakeFiles/p6.dir/all
 
 # Build rule for subdir invocation for target.
@@ -353,6 +357,60 @@ p6: CMakeFiles/p6.dir/rule
 CMakeFiles/p6.dir/clean:
 	$(MAKE) -f CMakeFiles\p6.dir\build.make CMakeFiles/p6.dir/clean
 .PHONY : CMakeFiles/p6.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/D.dir
+
+# All Build rule for target.
+CMakeFiles/D.dir/all:
+	$(MAKE) -f CMakeFiles\D.dir\build.make CMakeFiles/D.dir/depend
+	$(MAKE) -f CMakeFiles\D.dir\build.make CMakeFiles/D.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=15,16 "Built target D"
+.PHONY : CMakeFiles/D.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/D.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/D.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles/D.dir/rule
+
+# Convenience name for target.
+D : CMakeFiles/D.dir/rule
+
+.PHONY : D
+
+# clean rule for target.
+CMakeFiles/D.dir/clean:
+	$(MAKE) -f CMakeFiles\D.dir\build.make CMakeFiles/D.dir/clean
+.PHONY : CMakeFiles/D.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ACoinProblem.dir
+
+# All Build rule for target.
+CMakeFiles/ACoinProblem.dir/all:
+	$(MAKE) -f CMakeFiles\ACoinProblem.dir\build.make CMakeFiles/ACoinProblem.dir/depend
+	$(MAKE) -f CMakeFiles\ACoinProblem.dir\build.make CMakeFiles/ACoinProblem.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target ACoinProblem"
+.PHONY : CMakeFiles/ACoinProblem.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ACoinProblem.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/ACoinProblem.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles/ACoinProblem.dir/rule
+
+# Convenience name for target.
+ACoinProblem: CMakeFiles/ACoinProblem.dir/rule
+
+.PHONY : ACoinProblem
+
+# clean rule for target.
+CMakeFiles/ACoinProblem.dir/clean:
+	$(MAKE) -f CMakeFiles\ACoinProblem.dir\build.make CMakeFiles/ACoinProblem.dir/clean
+.PHONY : CMakeFiles/ACoinProblem.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

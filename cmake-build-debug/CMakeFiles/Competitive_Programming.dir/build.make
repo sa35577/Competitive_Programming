@@ -33,10 +33,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = C:\Users\satcl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = C:\Users\satcl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -173,6 +173,32 @@ CMakeFiles/Competitive_Programming.dir/AtCoder/DP/E.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Competitive_Programming.dir/AtCoder/DP/E.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\satcl\CLionProjects\Competitive Programming\AtCoder\DP\E.cpp" -o CMakeFiles\Competitive_Programming.dir\AtCoder\DP\E.cpp.s
 
+CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.obj: CMakeFiles/Competitive_Programming.dir/flags.make
+CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.obj: ../AtCoder/DP/D.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Competitive_Programming.dir\AtCoder\DP\D.cpp.obj -c "C:\Users\satcl\CLionProjects\Competitive Programming\AtCoder\DP\D.cpp"
+
+CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\satcl\CLionProjects\Competitive Programming\AtCoder\DP\D.cpp" > CMakeFiles\Competitive_Programming.dir\AtCoder\DP\D.cpp.i
+
+CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\satcl\CLionProjects\Competitive Programming\AtCoder\DP\D.cpp" -o CMakeFiles\Competitive_Programming.dir\AtCoder\DP\D.cpp.s
+
+CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.obj: CMakeFiles/Competitive_Programming.dir/flags.make
+CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.obj: ../DMOJ/ACoinProblem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Competitive_Programming.dir\DMOJ\ACoinProblem.cpp.obj -c "C:\Users\satcl\CLionProjects\Competitive Programming\DMOJ\ACoinProblem.cpp"
+
+CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\satcl\CLionProjects\Competitive Programming\DMOJ\ACoinProblem.cpp" > CMakeFiles\Competitive_Programming.dir\DMOJ\ACoinProblem.cpp.i
+
+CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\satcl\CLionProjects\Competitive Programming\DMOJ\ACoinProblem.cpp" -o CMakeFiles\Competitive_Programming.dir\DMOJ\ACoinProblem.cpp.s
+
 # Object files for target Competitive_Programming
 Competitive_Programming_OBJECTS = \
 "CMakeFiles/Competitive_Programming.dir/main.cpp.obj" \
@@ -183,7 +209,9 @@ Competitive_Programming_OBJECTS = \
 "CMakeFiles/Competitive_Programming.dir/DMOPC/19/April/p1.cpp.obj" \
 "CMakeFiles/Competitive_Programming.dir/DMOPC/19/April/p2.cpp.obj" \
 "CMakeFiles/Competitive_Programming.dir/DMOPC/14/Exam_Time/p6.cpp.obj" \
-"CMakeFiles/Competitive_Programming.dir/AtCoder/DP/E.cpp.obj"
+"CMakeFiles/Competitive_Programming.dir/AtCoder/DP/E.cpp.obj" \
+"CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.obj" \
+"CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.obj"
 
 # External object files for target Competitive_Programming
 Competitive_Programming_EXTERNAL_OBJECTS =
@@ -197,11 +225,13 @@ Competitive_Programming.exe: CMakeFiles/Competitive_Programming.dir/DMOPC/19/Apr
 Competitive_Programming.exe: CMakeFiles/Competitive_Programming.dir/DMOPC/19/April/p2.cpp.obj
 Competitive_Programming.exe: CMakeFiles/Competitive_Programming.dir/DMOPC/14/Exam_Time/p6.cpp.obj
 Competitive_Programming.exe: CMakeFiles/Competitive_Programming.dir/AtCoder/DP/E.cpp.obj
+Competitive_Programming.exe: CMakeFiles/Competitive_Programming.dir/AtCoder/DP/D.cpp.obj
+Competitive_Programming.exe: CMakeFiles/Competitive_Programming.dir/DMOJ/ACoinProblem.cpp.obj
 Competitive_Programming.exe: CMakeFiles/Competitive_Programming.dir/build.make
 Competitive_Programming.exe: CMakeFiles/Competitive_Programming.dir/linklibs.rsp
 Competitive_Programming.exe: CMakeFiles/Competitive_Programming.dir/objects1.rsp
 Competitive_Programming.exe: CMakeFiles/Competitive_Programming.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Competitive_Programming.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\satcl\CLionProjects\Competitive Programming\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Competitive_Programming.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Competitive_Programming.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

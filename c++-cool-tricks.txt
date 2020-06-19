@@ -1,0 +1,46 @@
+C++ COOL TRICKS
+___________________________________________________________________________
+
+Fast Multiplication and Division by 2
+(Uses the numbers in bits,
+which is binary)
+a << b
+shift operators left 1 (in base 2)
+this will multiply a number by 2, if b = 1
+a >> b
+shift operators right 1 (in base 2)
+this will do integer division, if b = 1 (A / B)
+
+BITWISE OPERATORS
+a | b (inclusive or)
+A	B
+0	0	0
+0	1	1
+1	0	1
+1	1	1
+Doing a | 1 will return the least integer greater 
+than or equal to a that is not divisible by 2.
+
+a ^ b (exclusive or)
+This will write both a or b in bits,
+Input	Output
+A	B
+0	0	0
+0	1	1
+1	0	1
+1	1	0
+0, false
+1, true
+Doing a ^ 1 returns the greatest integer less
+than or equal to a that is not divisible by 2.
+
+a & b (and)
+Input	Output
+A	B
+0	0	0
+0	1	0
+1	0	0
+1	1	1
+0, false
+1, true
+Doing x & 1 is equivalent to x % 2.
