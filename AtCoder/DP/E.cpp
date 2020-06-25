@@ -1,6 +1,3 @@
-//
-// Created by satcl on 2020-05-05.
-//
 #include <bits/stdc++.h>
 #include <unordered_set>
 #include <stdio.h>
@@ -27,26 +24,42 @@ inline double degsin(double ang) {return sin(ang*PI/180);}
 /*---END OF TEMPLATE---*/
 
 
-int n,w;
-ll dp[1000000+2];
+
 int main() {
     cin.sync_with_stdio(0);
     cin.tie(0);
     //ifstream fin("data.in");
     //ofstream fout("data.out");
-
-    scan(n); scan(w);
-
-    memset(dp,0,sizeof(dp));
-    rep(i,1,n+1,1) {
-        int wei,val;
-        scan(wei);
-        scan(val);
-        for (int j = w; j >= wei; j--) {
-            dp[j] = max(dp[j-wei]+val,dp[j]);
+    int N;
+    ll W;
+    cin >> N >> W;
+    ll dp[100001];
+    dp[0] = 0;
+    for (int i = 1; i < 100001; i++) {
+        dp[i] = -1;
+    }
+    for (int i = 0; i < N; i++) {
+        ll w;
+        int v;
+        cin >> w >> v;
+        for (int j = 100000 - v; j >= 0; j--) {
+            if (dp[j] != -1 && dp[j]+w <= W) {
+                if (dp[j+v] == -1 || dp[j+v] > dp[j]+w) {
+                    dp[j+v] = dp[j]+w;
+                }
+            }
         }
     }
-    int mx = -1;
-    rep(i,0,w+1,1) mx = max(dp[i],mx);
+    int mx = 0;
+    for (int i = 100000; i >= 0; i--) {
+        if (dp[i] != -1) {
+            mx = i;
+            break;
+        }
+    }
     cout << mx << endl;
+    
+
+
+
 }
