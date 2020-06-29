@@ -9,6 +9,7 @@
         "unordered_set": "cpp",
         "xhash": "cpp",
         "string": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "algorithm": "cpp"
     }
 }
