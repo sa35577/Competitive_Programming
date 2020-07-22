@@ -46,7 +46,7 @@ int main() {
             dp[j] = max(dp[j-wei]+val,dp[j]);
         }
     }
-    int mx = -1;
+    ll mx = -1;
     rep(i,0,w+1,1) mx = max(dp[i],mx);
     cout << mx << endl;
 }

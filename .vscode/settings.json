@@ -10,6 +10,9 @@
         "xhash": "cpp",
         "string": "cpp",
         "xstring": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "unordered_map": "cpp",
+        "iosfwd": "cpp",
+        "xiosbase": "cpp"
     }
 }

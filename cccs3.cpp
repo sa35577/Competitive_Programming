@@ -1,84 +1,133 @@
 #include <bits/stdc++.h>
 #include <unordered_set>
+#include <stdio.h>
+
 using namespace std;
 
-unsigned int dp[200005];
-unsigned int freq[200005][26];
-unsigned int hi[200005], ni[200005];
-unsigned int val(char c) {
-    return (unsigned int)(int(c)-97);
+#define scan(x) do{while((x=getchar())<'0'); for(x-='0'; '0'<=(_=getchar()); x=(x<<3)+(x<<1)+_-'0');}while(0)
+char _;
+#define f first
+//#define s second
+#define ll long long
+#define ull unsigned long long
+#define endl "\n"
+#define PI 3.141592653589793
+#define vi vector<int>
+#define vll vector<long long>
+#define p pair<int,int>
+const ll MOD = 44654641650887;
+inline double degcos(double ang) {return cos(ang*PI/180);}
+inline double degsin(double ang) {return sin(ang*PI/180);}
+#define rep(i,j,k,in) for (int i = j; i < k; i += in)
+
+
+/*---END OF TEMPLATE---*/
+
+
+ll pows[200005];
+void initHash() {
+    ll cur = 1;
+    for (int i = 200004; i >= 0; i--) {
+        cur = (cur * 37) % MOD;
+        cur = (cur + MOD) % MOD;
+        pows[i] = cur;
+    }
 }
 
-long long hsh(string key) {
-  const int base = 13;
-  long long hsh = 0;
-  for (int charIndex = 0; charIndex < key.size(); charIndex += 1) {
-    const int charCode = key[charIndex];
-    hsh = (hsh * base + charCode) % 1000000007;
-  }
+ll hasher(const string &s) {
+    ll val = 0;
+    rep(i,0,s.size(),1) {
+        char curChar = s[i];
+        val += pows[i] * (curChar-'a'+1);
+        val = val % MOD;
+    }
+    if (val < 0) {
+        val = (val + MOD) % MOD;
+    }
+    return val % MOD;
+}
 
-  return hsh;
+
+int charToInt(char c) {
+    return int(c - 'a');
+}
+
+bool arrayEqual(int *arr1, int *arr2) {
+    rep(i,0,26,1) {
+        if (arr1[i] != arr2[i]) return false;
+    }
+    return true;
 }
 
 int main() {
-    //cout << hsh("ab") << " " << hsh("b");
-    string n,h;
-    cin >> n >> h;
-    unsigned int N = 0;
-    unordered_set<long long> st;
-    unsigned int ns = n.size(),hs = h.size();
-    if (ns > hs) {
-        cout << 0;
+    cin.sync_with_stdio(0);
+    cin.tie(0);
+    //ifstream fin("data.in");
+    //ofstream fout("data.out");
+    initHash();
+    string n,s;
+    cin >> n >> s;
+    int nSize = n.size(),sSize = s.size();
+    int nfreq[26];
+    memset(nfreq,0,sizeof(nfreq));
+    rep(i,0,n.size(),1) {
+        nfreq[charToInt(n[i])]++;
+    }
+    ll nValue = hasher(n) % MOD;
+    int sfreq[26];
+    memset(sfreq,0,sizeof(sfreq));
+    rep(i,0,nSize,1) {
+        sfreq[charToInt(s[i])]++;
+    }
+    if (nSize > sSize) {
+        cout << 0 << endl;
         return 0;
     }
-    unsigned int Nfreq[26];
-    memset(Nfreq,0,sizeof(Nfreq));
-    for (unsigned int i = 0; i < ns; i++) {
-        ni[i] = val(n[i]);
-        N += ni[i];
-        Nfreq[ni[i]]++;
-    }
-    
-    dp[0] = 0;
-    for (unsigned int i = 0; i < 26; i++) freq[0][i] = 0;
-    for (unsigned int i = 0; i < hs; i++) {
-        hi[i] = val(h[i]);
-        if (i == 0) {
-            dp[i] = hi[i];
-            freq[i][hi[i]]++;
+    if (nSize == sSize) {
+        //cout << "lol";
+        if (arrayEqual(nfreq,sfreq)) {
+            cout << 1 << endl;
         }
         else {
-            dp[i] = dp[i-1] + hi[i];
-            for (unsigned int j = 0; j < 26; j++) {
-                freq[i][j] = freq[i-1][j];
-            }
-            freq[i][hi[i]]++;
+            cout << 0 << endl;
         }
+        //cout << (n == s ? 1 : 0) << endl;
+        return 0;
     }
-    unsigned int nfreq[26];
-    for (unsigned int i = ns-1; i < hs; i++) {
-        unsigned int cur = dp[i];
-        if (i != ns-1) {
-            cur -= dp[i-ns];
+    if (nSize == 1) {
+        int cnt = 0;
+        rep(i,0,sSize,1) {
+            if (s[i] == n[0]) cnt++;
         }
-        if (cur == N) {
-            bool good = true;
-            for (unsigned int j = 0; j < 26; j++) {
-                nfreq[j] = freq[i][j];
-                if (i >= ns) nfreq[j] -= freq[i-ns][j];
-                if (nfreq[j] != Nfreq[j]) {
-
-                    good = false;
-                    break;
-                }
-            }
-            if (good) {
-                string newstr = h.substr(i-ns+1,ns);
-                //c.insert(newstr);
-                st.insert(hsh(newstr));
-
-            }  
-        }
+        cout << cnt << endl;
+        return 0;
     }
+    
+    ll curValue = hasher(s.substr(0,nSize));
+    unordered_set<ll> st;
+    
+    
+   if (arrayEqual(nfreq,sfreq))  {
+       st.insert(curValue);
+       
+   }
+    rep(j,nSize,sSize,1) {
+        ll sub = (pows[nSize]*(s[j]-'a'+1) % MOD  -  pows[0]*(s[j-nSize]-'a'+1) % MOD) % MOD;
+        
+        sfreq[s[j]-'a']++;
+        sfreq[s[j-nSize]-'a']--;
+        curValue = ((curValue + sub) % MOD + MOD) % MOD;
+        curValue = (curValue * 37) % MOD;
+        if (arrayEqual(nfreq,sfreq)) {
+            //st.insert(hasher(s.substr(j-nSize+1,nSize)));
+            st.insert(curValue);
+            
+        }
+        
+    }
+    
     cout << st.size();
+
+
+
 }

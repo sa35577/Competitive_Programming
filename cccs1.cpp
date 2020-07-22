@@ -3,8 +3,8 @@ using namespace std;
 
 #define ll long long
 int main() {
-    cin.sync_with_stdio(0);
-    cin.tie(0); cout.tie(0);
+    //cin.sync_with_stdio(0);
+    //cin.tie(0); cout.tie(0);
     ll n;
     cin >> n;
 
@@ -30,6 +30,6 @@ int main() {
         prev = cur;
         q.pop();
     }
-    cout << mx; 
-
+    //cout << mx; 
+    printf("%.7f",mx);
 }
