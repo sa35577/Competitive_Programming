@@ -34,6 +34,7 @@ long double maxVal[501];
 int main() {
     cin.sync_with_stdio(0);
     cin.tie(0);
+
     //ifstream fin("data.in");
     //ofstream fout("data.out");
     cin >> N >> M;
@@ -54,11 +55,14 @@ int main() {
     memset(maxVal,0.0,sizeof(maxVal));
     maxVal[fruits["APPLES"]] = 1.000000;
     q.push({fruits["APPLES"],1.000000});
+    int tot = 0;
     while (!q.empty()) {
+        //printf("%d\n",q.size());
         pair<int,long double> cur = q.front();
         q.pop();
         int curKey = cur.first;
         long double curValue = cur.second;
+        ++tot;
         if (veggies[curKey] == "APPLES" && curValue >= 1.1) {
             cout << "YA\n";
             return 0;
@@ -75,7 +79,7 @@ int main() {
         cout << "YA\n";
         return 0;
     }
-    cout << "NAW\n";
+    cout << "NAW\n" << tot;
 
 
 

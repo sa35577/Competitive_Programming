@@ -5,12 +5,12 @@ int main() {
     cin.tie(0);
     int n,sm = 0;
     cin >> n;
-    int arr[40];
+    int arr[101];
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
         sm += arr[i];
     }
-    int dp[45][sm+1];
+    int dp[105][sm+1];
     for (int i = 0; i <= n; i++) dp[i][0] = 1;
     for (int i = 1; i <= sm; i++) dp[0][i] = 0;
     for (int i = 1; i <= n; i++) {

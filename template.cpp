@@ -10,11 +10,13 @@ char _;
 #define s second
 #define ll long long
 #define ull unsigned long long
+#define ld long double
 #define endl "\n"
 #define PI 3.141592653589793
 #define vi vector<int>
 #define vll vector<long long>
-#define p pair<int,int>
+#define pii pair<int,int>
+#define pll pair<ll,ll>
 const int MOD = 1000000007;
 inline double degcos(double ang) {return cos(ang*PI/180);}
 inline double degsin(double ang) {return sin(ang*PI/180);}
@@ -34,5 +36,4 @@ int main() {
     //ifstream fin("data.in");
     //ofstream fout("data.out");
 
-    
 }

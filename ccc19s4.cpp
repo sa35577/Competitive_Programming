@@ -31,6 +31,7 @@ ll st[MAXN][MAXLOG];
 ll arr[MAXN],day[MAXN],dp[MAXN];
 
 
+
 void buildTable() {
     LOG[1] = 0;
     rep(i,2,N+2,1) {
