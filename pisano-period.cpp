@@ -17,4 +17,5 @@ int main() {
         PERIOD++;
     }   
     cout << PERIOD << "\n";
+    
 }
