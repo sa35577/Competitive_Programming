@@ -14,6 +14,7 @@
         "unordered_map": "cpp",
         "iosfwd": "cpp",
         "xiosbase": "cpp",
-        "xlocale": "cpp"
+        "xlocale": "cpp",
+        "ostream": "cpp"
     }
 }
