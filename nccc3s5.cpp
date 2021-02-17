@@ -47,7 +47,7 @@ struct Node {
 void build_tree(int v, int L, int R) {
     seg[v].L = L;
     seg[v].R = R;
-    seg[v].lazy = seg[v].reset = seg[v].val = seg[v].cnt = 0;
+    seg[v].lazy = 0; seg[v].reset = 0; seg[v].val = 0; seg[v].cnt = 0;
     if (L == R) { return; }
     int mid = (L+R)>>1;
     build_tree(v<<1,L,mid);
@@ -82,7 +82,7 @@ void add(int v, int k, int p) {
     if (L == R) {
         seg[v].cnt += k;
         seg[v].val += ((ll)k)*((ll)p);
-        //seg[v].lazy += k;
+        seg[v].lazy += k;
         return;
     }
     add(v<<1,k,p);
