@@ -1,184 +1,197 @@
 #include <bits/stdc++.h>
-#include <unordered_set>
-#include <stdio.h>
 using namespace std;
-#define scan(x) do{while((x=getchar())<'0'); for(x-='0'; '0'<=(_=getchar()); x=(x<<3)+(x<<1)+_-'0');}while(0)
-char _;
-#define f first
-#define s second
+
 #define ll long long
-#define ull unsigned long long
-#define ld long double
-#define endl "\n"
-#define PI 3.141592653589793
-#define vi vector<int>
-#define vll vector<long long>
-#define pii pair<int,int>
-#define pll pair<ll,ll>
-const int MOD = 1000000007;
-inline double degcos(double ang) {return cos(ang*PI/180);}
-inline double degsin(double ang) {return sin(ang*PI/180);}
-#define rep(i,j,k,in) for (int i = j; i < k; i += in)
-#define repr(i,j,k,in) for (int i = j; i > k; i -= in)
-#define repll(i,j,k,in) for (ll i = j; i < k; i += in)
-#define repllr(i,j,k,in) for (ll i = j; i > k; i -= in)
-
-/*---END OF TEMPLATE---*/
-
-const int MAXP = 2000006;
+const int MAXP = 2000005;
 struct Node {
-    int L;
-    int R;
-    ll lazy = 0;
-    bool reset = 0;
-    ll val = 0;
-    ll cnt = 0;
-    friend Node operator+(Node n1, Node n2) {
-        return {n1.L, n2.R, 0, 0, n1.val+n2.val, n1.cnt+n2.cnt};
-    }
-    void clear() {
-        reset = 1;
-        val = 0;
-        cnt = 0;
-        lazy = 0;
-    }
-} seg[4*MAXP];
+	int L,R;
+	ll sumCones=0;
+	ll numCones=0;
+	ll lazyInc=0;
+	bool lazyReset=0;
+	void clear() {
+		sumCones = 0;
+		numCones = 0;
+		lazyInc = 0;
+		lazyReset = 1;
+	}
+	int size() {
+		return R-L+1;
+	}
+	 
+} seg[MAXP<<2];
+
+ll sumTo(ll n) {
+	return (n*(n+1))>>1;
+}
 
 void build_tree(int v, int L, int R) {
-    seg[v].L = L;
-    seg[v].R = R;
-    seg[v].lazy = 0; seg[v].reset = 0; seg[v].val = 0; seg[v].cnt = 0;
-    if (L == R) { return; }
-    int mid = (L+R)>>1;
-    build_tree(v<<1,L,mid);
-    build_tree(v<<1|1,mid+1,R);
+	seg[v].L = L;
+	seg[v].R = R;
+	if (L == R) return;
+	int mid = (L+R)>>1;
+	build_tree(v<<1,L,mid); build_tree(v<<1|1,mid+1,R);
 }
+
 void push_lazy(int v) {
-    int L = seg[v].L, R = seg[v].R, mid = (L+R)>>1;
-    if (seg[v].lazy != 0) {
-        seg[v<<1].cnt += seg[v].lazy*(mid-L+1);
-        seg[v<<1].val += seg[v].lazy*(mid-L+1)*(mid+L)/2;//lazy * sum of numbers
-        seg[v<<1].lazy += seg[v].lazy;
-        seg[v<<1|1].cnt += seg[v].lazy*(R-(mid+1)+1);
-        seg[v<<1|1].val += seg[v].lazy*(R-(mid+1)+1)*((mid+1)+R)/2;//lazy * sum of numbers
-        seg[v<<1|1].lazy += seg[v].lazy;
+	int L = seg[v].L, R = seg[v].R, mid = (L+R)>>1;
+    if (seg[v].size() > 1) {
+		if (seg[v].lazyReset) {
+			seg[v<<1].clear();
+			seg[v<<1|1].clear();
+		}
+		
+		ll sumL = sumTo(mid)-sumTo(L-1), sumR = sumTo(R)-sumTo(mid);
+		seg[v<<1].sumCones += seg[v].lazyInc*sumL;
+		seg[v<<1].numCones += seg[v].lazyInc * seg[v<<1].size();
+		seg[v<<1].lazyInc += seg[v].lazyInc;
+		seg[v<<1|1].sumCones += seg[v].lazyInc*sumR;
+		seg[v<<1|1].numCones += seg[v].lazyInc*seg[v<<1|1].size();
+		seg[v<<1|1].lazyInc += seg[v].lazyInc;
+		
     }
-    if (seg[v].reset) {
-        seg[v<<1].lazy = seg[v<<1|1].lazy = 0;
-        seg[v<<1].cnt = seg[v<<1|1].cnt = 0;
-        seg[v<<1].val = seg[v<<1|1].val = 0;
-        seg[v<<1].reset = seg[v<<1|1].reset = 1;
-    }
-    seg[v].lazy = 0;
-    seg[v].reset = 0;
+    seg[v].lazyReset = 0;
+	seg[v].lazyInc = 0;
+    
+    
 }
 
-void add(int v, int k, int p) {
-    int L = seg[v].L, R = seg[v].R;
-    if (p < L || R < p) {
-        return;
-    }
-    if (L < R) push_lazy(v);
-    if (L == R) {
-        seg[v].cnt += k;
-        seg[v].val += ((ll)k)*((ll)p);
-        seg[v].lazy += k;
-        return;
-    }
-    add(v<<1,k,p);
-    add(v<<1|1,k,p);
-    seg[v] = seg[v<<1] + seg[v<<1|1];
+void add(int v, int QL, int QR, ll cnt) {
+	int L = seg[v].L, R = seg[v].R;
+	push_lazy(v);
+	if (seg[v].L == QL && seg[v].R == QR) {
+		ll sum = sumTo(R)-sumTo(L-1);
+		seg[v].sumCones += cnt*sum;
+		seg[v].numCones += seg[v].size()*cnt;
+		seg[v].lazyInc += cnt;
+		seg[v].lazyReset = 0;//
+		return;
+	}
+	int mid = (L+R)>>1;
+	if (QR <= mid) add(v<<1,QL,QR,cnt);
+	else if (QL > mid) add(v<<1|1,QL,QR,cnt);
+	else {
+		add(v<<1,QL,mid,cnt);
+		add(v<<1|1,mid+1,QR,cnt);
+	}
+	seg[v].sumCones = seg[v<<1].sumCones + seg[v<<1|1].sumCones;
+	seg[v].numCones = seg[v<<1].numCones + seg[v<<1|1].numCones;
+
 }
 
-void addRange(int v, int UL, int UR) {
-    int L = seg[v].L, R = seg[v].R;
-    if (UR < L || R < UL) {
-        return;
-    }
-    if (L < R) push_lazy(v);
-    if (UL <= L && R <= UR) {
-        seg[v].val += ((ll)(R-L+1))*((ll)(L+R))/2;
-        seg[v].cnt += (ll)(R-L+1);
-        seg[v].lazy += 1LL;
-        return;
-    }
-    addRange(v<<1,UL,UR);
-    addRange(v<<1|1,UL,UR);
-    seg[v] = seg[v<<1] + seg[v<<1|1];
-}
+ll buyAmt(int v, ll Q) {
+	int L = seg[v].L, R = seg[v].R;
+    push_lazy(v);
 
-ll buyAmt(int v, ll Q) { //current node, amount of money remaining (find max # of cones)
-    int L = seg[v].L, R = seg[v].R;
-    if (L < R) push_lazy(v);
     ll ans;
+	if (seg[v].sumCones <= Q) {
+		ans = seg[v].numCones;
+		seg[v].clear();
+		return ans;
+	}
     if (L == R) {
-        ans = min(Q/L,seg[v].cnt);
-        
-        seg[v].cnt -= ans;
-        seg[v].val -= ans*L;
+        ans = Q/L;
+        seg[v].numCones -= ans;
+        seg[v].sumCones -= ans*L;
+		seg[v].lazyInc -= ans;
+		seg[v].lazyReset = 0;//
         return ans;
     }
-    if (seg[v<<1].val >= Q) ans = buyAmt(v<<1,Q);
+    if (seg[v<<1].sumCones >= Q) ans = buyAmt(v<<1,Q);
     else {
-        ans = seg[v<<1].cnt + buyAmt(v<<1|1,Q-seg[v<<1].val);
-        seg[v<<1].clear();
+		ll sto = seg[v<<1].sumCones;
+        ans = buyAmt(v<<1,Q) + buyAmt(v<<1|1,Q-sto);
     }
-    seg[v] = seg[v<<1] + seg[v<<1|1];
+    seg[v].sumCones = seg[v<<1].sumCones + seg[v<<1|1].sumCones;
+	seg[v].numCones = seg[v<<1].numCones + seg[v<<1|1].numCones;
     return ans;
-
 }
 
-ll buyLowHigh(int v, ll Q, bool low) {
-    int L = seg[v].L, R = seg[v].R;
-    if (L < R) push_lazy(v);
+
+
+ll buyLow(int v, ll Q) {
+	int L = seg[v].L, R = seg[v].R;
+    push_lazy(v);
     ll ans;
+	if (seg[v].numCones <= Q) {
+		ans = seg[v].sumCones;
+		seg[v].clear();
+		return ans;
+	}
     if (L == R) {
-        ans = min(Q,seg[v].cnt);
-        seg[v].cnt -= ans;
-        ans = ans * ((ll)L);
-        seg[v].val -= ans;
+        ans = L * Q;
+		seg[v].numCones -= Q;
+		seg[v].sumCones -= ans;
+		seg[v].lazyInc -= Q;
+		seg[v].lazyReset = 0;//
         return ans;
     }
-    if (low) {
-        if (seg[v<<1].cnt >= Q) {
-            ans = buyLowHigh(v<<1,Q,low);
-        }
-        else {
-            ans = seg[v<<1].val + buyLowHigh(v<<1|1,Q-seg[v<<1].cnt,low);
-            seg[v<<1].clear();
-        }
+
+	if (seg[v<<1].numCones >= Q) {
+		ans = buyLow(v<<1,Q);
+	}
+	else {
+		ll sto = seg[v<<1].numCones;
+		ans = buyLow(v<<1,Q) + buyLow(v<<1|1,Q-sto);
+	}
+    
+    
+    seg[v].sumCones = seg[v<<1].sumCones + seg[v<<1|1].sumCones;
+	seg[v].numCones = seg[v<<1].numCones + seg[v<<1|1].numCones;
+    return ans;
+}
+
+ll buyHigh(int v, ll Q) {
+	int L = seg[v].L, R = seg[v].R;
+    push_lazy(v);
+    ll ans;
+	if (seg[v].numCones <= Q) {
+		ans = seg[v].sumCones;
+		seg[v].clear();
+		return ans;
+	}
+    if (L == R) {
+        ans = L * Q;
+		seg[v].numCones -= Q;
+		seg[v].sumCones -= ans;
+		seg[v].lazyInc -= Q;
+		seg[v].lazyReset = 0;//
+        return ans;
     }
-    else {
-        if (seg[v<<1|1].cnt >= Q) {
-            ans = buyLowHigh(v<<1|1,Q,low);
-        }
-        else {
-            ans = seg[v<<1|1].val + buyLowHigh(v<<1,Q-seg[v<<1|1].cnt,low);
-            seg[v<<1|1].clear();
-        }
-    }
-    seg[v] = seg[v<<1] + seg[v<<1|1];
+    
+    
+	if (seg[v<<1|1].numCones >= Q) {
+		ans = buyHigh(v<<1|1,Q);
+	}
+	else {
+		ll sto = seg[v<<1|1].numCones;
+		ans = buyHigh(v<<1|1,Q) + buyHigh(v<<1,Q-sto);
+	}
+    
+    seg[v].sumCones = seg[v<<1].sumCones + seg[v<<1|1].sumCones;
+	seg[v].numCones = seg[v<<1].numCones + seg[v<<1|1].numCones;
     return ans;
 }
 
 ll cost(int v, ll Q) {
     int L = seg[v].L, R = seg[v].R;
+	push_lazy(v);
+	ll ans;
+	if (Q > seg[v].numCones) return -1;
     if (L == R) return L;
-    push_lazy(v);
-    if (seg[v<<1].cnt >= Q) {
-        return cost(v<<1,Q);
+    if (seg[v<<1].numCones >= Q) {
+        ans = cost(v<<1,Q);
     }
-    else return cost(v<<1|1,Q-seg[v<<1].cnt);
+    else ans = cost(v<<1|1,Q-seg[v<<1].numCones);
+	seg[v].sumCones = seg[v<<1].sumCones + seg[v<<1|1].sumCones;
+	seg[v].numCones = seg[v<<1].numCones + seg[v<<1|1].numCones;
+	return ans;
 }
-
-
 
 int main() {
     cin.sync_with_stdio(0);
     cin.tie(0);
-    //ifstream fin("data.in");
-    //ofstream fout("data.out");
-    int N,K,P,A,B;
+    ll N,K,P,A,B;
     ll Q,L;
     string qType;
     cin >> N;
@@ -187,34 +200,35 @@ int main() {
         cin >> qType;
         if (qType == "ADD") {
             cin >> K >> P;
-            add(1,K,P);
+            add(1,P,P,K);
         }
         else if (qType == "ADDRANGE") {
             cin >> A >> B;
-            addRange(1,A,B);
+            add(1,A,B,1);
         }
         else if (qType == "BUYAMT") {
             cin >> Q;
-            cout << buyAmt(1,Q) << endl;
+            cout << buyAmt(1,Q) << "\n";
+			
         }
         else if (qType == "BUYLOW") {
             cin >> L;
-            cout << buyLowHigh(1,L,1) << endl;
+            cout << buyLow(1,L) << "\n";
+
         }
         else if (qType == "BUYHIGH") {
             cin >> L;
-            cout << buyLowHigh(1,L,0) << endl;
+            cout << buyHigh(1,L) << "\n";
         }
         else if (qType == "COST") {
             cin >> L;
-            if (seg[1].cnt < L) cout << -1 << endl;
-            else cout << cost(1,L) << endl;
+			cout << cost(1,L) << "\n";
         }
         else if (qType == "NUMCONES") {
-            cout << seg[1].cnt << endl;
+            cout << seg[1].numCones << "\n";
         }
         else if (qType == "TOTALCOST") {
-            cout << seg[1].val << endl;
+            cout << seg[1].sumCones << "\n";
         }        
     }
 }
