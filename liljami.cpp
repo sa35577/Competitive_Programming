@@ -54,10 +54,4 @@ int main() {
         ++a; ++b;
         cout << pre[b] - pre[a-1] << endl;
     }
-    
-
-
-
-
-    
 }
