@@ -1,4 +1,4 @@
 x = int(input())
 for i in range(x):
-    dude = input().split()
-    print("%.2f"%float(dude[0])**int(dude[1]))
+    arr = input().split()
+    print("%.2f"%float(arr[0])**int(arr[1]))

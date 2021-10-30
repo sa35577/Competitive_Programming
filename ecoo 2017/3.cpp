@@ -7,7 +7,7 @@ int mem[10001][10001];
 
 int main(){
     ifstream cin("DATA31.txt");
-    for(int u9ihy8oewrdiu7yhpighuypswqdf = 0; u9ihy8oewrdiu7yhpighuypswqdf < 10; u9ihy8oewrdiu7yhpighuypswqdf++){
+    for(int zz = 0; zz < 10; zz++){
         memset(mem, -1, 10001*10001);
         cin >> n;
         for(int i = 0; i < n; i++){

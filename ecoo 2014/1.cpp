@@ -2,12 +2,12 @@
 using namespace std;
 
 int main() {
-    for (int gay = 0; gay < 10; gay++) {
+    for (int g = 0; g < 10; g++) {
         int a,b,c;
         cin >> a >> b >> c;
         a--;
-        double whore = (double)(24*60*60+37*60+22.663)/(24*60*60);
-        double computeMin = (double)(a*24*60+b*60+c)/(whore*60*24);
+        double val = (double)(24*60*60+37*60+22.663)/(24*60*60);
+        double computeMin = (double)(a*24*60+b*60+c)/(val*60*24);
         int hour = (int)computeMin;
         cout << "Day ";
         cout << hour+1 << ", ";

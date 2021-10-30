@@ -1,4 +1,4 @@
-for boob in range(10):
+for looper in range(10):
     s1 = list(input().strip())
     s2 = list(input().strip())
     s3 = list(input().strip())
